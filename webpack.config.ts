@@ -3,6 +3,8 @@ import process from 'node:process'
 import type * as webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
+const [, , , mode] = process.argv
+
 export default {
   name: "Goold ol' Days",
   dotenv: true,
@@ -14,7 +16,7 @@ export default {
     host: '0.0.0.0',
     port: Number(process.env.PORT || 6969),
   },
-  mode: 'development',
+  mode: mode === 'production' ? 'production' : 'development',
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.jsx'],
   },

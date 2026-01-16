@@ -17,11 +17,13 @@
     "check:types": "tsgo --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "jquery": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.11",
     "@oxc-node/core": "^0.0.35",
+    "@types/express": "^5.0.6",
     "@types/jquery": "^3.5.33",
     "@types/node": "^25.0.9",
     "@types/webpack": "^5.28.5",

@@ -1,0 +1,9 @@
+# ignore everything
+*
+
+# except for
+!src
+!package.json
+!tsconfig.json
+!package-lock.json
+!webpack.config.ts
