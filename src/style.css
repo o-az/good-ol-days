@@ -1,8 +1,278 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  background-color: #f6f6ef;
+}
+
+/* Layout */
+#hn-container {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #f6f6ef;
+  border-collapse: collapse;
+}
+
+/* Header */
+#hn-header td {
+  background-color: #ff6600;
+  padding: 2px 4px;
+}
+
+#hn-header-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#hn-logo {
+  border: 1px solid white;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11pt;
+  color: #ff6600;
+  background-color: white;
+  text-decoration: none;
+}
+
+#hn-site-name {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+#hn-nav {
+  display: inline;
+}
+
+#hn-nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 10pt;
+}
+
+#hn-nav a:hover {
+  text-decoration: underline;
+}
+
+#hn-nav .separator {
+  color: black;
+}
+
+#hn-header-right {
+  float: right;
+  padding-right: 4px;
+}
+
+#hn-header-right a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Stories table */
+#hn-stories {
+  padding: 10px 0;
+}
+
+#hn-stories-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hn-story td {
+  padding: 2px 4px;
+  vertical-align: top;
+}
+
+.hn-rank {
+  color: #828282;
+  text-align: right;
+  width: 30px;
+}
+
+.hn-vote {
+  width: 15px;
+  text-align: center;
+}
+
+.hn-upvote {
+  cursor: pointer;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #828282;
+}
+
+.hn-upvote:hover,
+.hn-upvote.voted {
+  border-bottom-color: #ff6600;
+}
+
+.hn-story-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.hn-story-title a:visited {
+  color: #828282;
+}
+
+.hn-story-title a:hover {
+  text-decoration: underline;
+}
+
+.hn-domain {
+  font-size: 8pt;
+  color: #828282;
+  margin-left: 5px;
+}
+
+.hn-subtext {
+  font-size: 7pt;
+  color: #828282;
+  padding-top: 1px;
+}
+
+.hn-subtext a {
+  color: #828282;
+  text-decoration: none;
+}
+
+.hn-subtext a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+#hn-footer td {
+  border-top: 2px solid #ff6600;
+  padding: 15px;
+  text-align: center;
+  color: #828282;
+}
+
+#hn-footer-nav a {
+  color: black;
+  text-decoration: none;
+}
+
+#hn-footer-nav a:hover {
+  text-decoration: underline;
+}
+
+#hn-search {
+  margin-top: 15px;
+}
+
+#hn-search-input {
+  padding: 2px 4px;
+  width: 180px;
+  border: 1px solid #828282;
+  font-size: 10pt;
+}
+
+/* Comments view */
+#hn-back {
+  padding: 10px 4px;
+}
+
+#hn-back a {
+  color: #828282;
+  text-decoration: none;
+}
+
+#hn-back a:hover {
+  text-decoration: underline;
+}
+
+#hn-story-header {
+  padding: 10px 4px;
+  border-bottom: 1px solid #ff6600;
+  margin-bottom: 15px;
+}
+
+#hn-story-header .hn-story-title {
+  font-size: 11pt;
+}
+
+#hn-story-header .hn-story-title a {
+  color: black;
+  text-decoration: none;
+}
+
+#hn-story-header .hn-story-title a:hover {
+  text-decoration: underline;
+}
+
+#hn-comments-container {
+  padding: 10px 4px;
+}
+
+.hn-comment {
+  margin-bottom: 8px;
+  padding: 2px 0;
+}
+
+.hn-comment-meta {
+  font-size: 8pt;
+  color: #828282;
+  margin-bottom: 2px;
+}
+
+.hn-comment-author {
+  color: #828282;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hn-comment-author:hover {
+  text-decoration: underline;
+}
+
+.hn-toggle {
+  color: #828282;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.hn-comment-text {
+  font-size: 9pt;
+  color: #000;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.hn-comment-text a {
+  color: #000;
+}
+
+.hn-comment-text p {
+  margin: 4px 0;
+}
+
+.hn-comment-text pre,
+.hn-comment-text code {
+  background: #f0f0f0;
+  padding: 2px 4px;
   font-family: monospace;
-  background-color: antiquewhite;
+  font-size: 9pt;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.hn-comment-children {
+  margin-top: 4px;
+  margin-left: 20px;
 }
